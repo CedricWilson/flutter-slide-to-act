@@ -135,24 +135,28 @@ class SlideActionState extends State<SlideAction>
                       child: Stack(
                         clipBehavior: Clip.antiAlias,
                         children: <Widget>[
-                          widget.submittedIcon ??
-                              Icon(
-                                Icons.done,
-                                color: widget.innerColor ??
-                                    Theme.of(context).primaryIconTheme.color,
-                              ),
-                          Positioned.fill(
-                            right: 0,
-                            child: Transform(
-                              transform: Matrix4.rotationY(
-                                  _checkAnimationDx * (pi / 2)),
-                              alignment: Alignment.centerRight,
-                              child: Container(
-                                color: widget.outerColor ??
-                                    Theme.of(context).accentColor,
-                              ),
-                            ),
+                          // widget.submittedIcon ??
+                          //     Icon(
+                          //       Icons.done,
+                          //       color: widget.innerColor ??
+                          //           Theme.of(context).primaryIconTheme.color,
+                          //     ),
+                          CircularProgressIndicator(
+                            valueColor:
+                                new AlwaysStoppedAnimation<Color>(Colors.white),
                           ),
+                          // Positioned.fill(
+                          //   right: 0,
+                          //   child: Transform(
+                          //     transform: Matrix4.rotationY(
+                          //         _checkAnimationDx * (pi / 2)),
+                          //     alignment: Alignment.centerRight,
+                          //     child: Container(
+                          //       color: widget.outerColor ??
+                          //           Theme.of(context).accentColor,
+                          //     ),
+                          //   ),
+                          // ),
                         ],
                       ),
                     ),
